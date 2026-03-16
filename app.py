@@ -15,7 +15,7 @@ def poke():
 poke()
 """
 # Develop a function that creates a new list of pokemon based on the type the user searched for. If no pokemon was found of that type inform the user
-
+"""
 def type():
     type = input("what type you want? (Grass, Fire, Water, Normal, Flying, Poison, Bug, Electric) ")
     lang = input("what language (english, japanese, french, or chinese) ")
@@ -25,6 +25,15 @@ def type():
     if type != "Grass" or "Fire" or "Water" or "Normal" or "Flying" or "Poison" or "Bug" or "Electric":
         print("nothing found kid")
 type()
+"""
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
-
+def search():
+    srch = input("what do you want to search: ").lower
+    found = []
+    for i in data:
+        name = data["name"]["english"]
+        if i in name:
+            found.append(i)
+    print(found)
+search()
 #For Leo/, help me come up with a clever final question, considering maybe showing all moves a pokemon has avaiable based on type
