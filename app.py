@@ -4,6 +4,10 @@ pokedex = open("./pokedex.json", encoding="utf8")
 ## create variable "data" that represents the enitre pokedex list
 data = json.load(pokedex)
 
+moveset = open("./moves.json", encoding="utf8")
+moves = json.load(moveset)
+
+
 # Create a function that will take the data from the JSON file and you will iterate through the list of pokemon and print each pokemons name.
 
 # Add a language choice feature and print the pokemons name based on the user input
@@ -28,12 +32,29 @@ type()
 """
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
 def search():
-    srch = input("what do you want to search: ").lower
+    srch = input("what do you want to search: ")
     found = []
+    x = 0
     for i in data:
-        name = data["name"]["english"]
-        if i in name:
-            found.append(i)
-    print(found)
+        if srch in data[x]["name"]["english"]:
+            found.append(i["name"]["english"])
+        x+=1
+    for i in found:
+        print(i)
+    if found == []:
+        print("nothing found")
 search()
 #For Leo/, help me come up with a clever final question, considering maybe showing all moves a pokemon has avaiable based on type
+def moves():
+    poke = input("what pokemon do you want to see moves of?: ")
+    type = input("what type of move (Grass, Fire, Water, Normal, Flying, Poison, Bug, or Electric): ")
+    x = 0
+    id = 0
+    for i in data:
+        if poke == data[x]["name"]["english"]:
+            id = data[x][id]
+        x+=1
+    for i in moves:
+        if id == moves[i][id]:
+            if 
+moves()
