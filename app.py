@@ -31,7 +31,7 @@ def type():
 type()
 """
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
-def search():
+'''def search():
     srch = input("what do you want to search: ")
     found = []
     x = 0
@@ -43,18 +43,20 @@ def search():
         print(i)
     if found == []:
         print("nothing found")
-search()
+search()'''
 #For Leo/, help me come up with a clever final question, considering maybe showing all moves a pokemon has avaiable based on type
-def moves():
+def typemove(x,y,id):
     poke = input("what pokemon do you want to see moves of?: ")
     type = input("what type of move (Grass, Fire, Water, Normal, Flying, Poison, Bug, or Electric): ")
-    x = 0
-    id = 0
     for i in data:
         if poke == data[x]["name"]["english"]:
-            id = data[x][id]
+            id = data[x]["id"]
         x+=1
     for i in moves:
-        if id == moves[i][id]:
-            if 
-moves()
+        if id == moves[y]["id"]:
+            if type == moves[y]["type"]:
+                print(moves[y]["ename"])
+            elif type != moves[y]["type"]:
+                print("nothing found")
+        y +=1
+typemove(0,0,0)
